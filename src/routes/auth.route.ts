@@ -3,10 +3,10 @@ import passport from 'passport';
 import { AuthController } from '../controllers/auth.controller';
 
 const authController = new AuthController();
-export const AuthRouter: Router = Router();
+export const router: Router = Router();
 
 // Login with passport
-AuthRouter.post(
+router.post(
   '/signin',
   passport.authenticate('local', {
     successRedirect: '/auth/successredirect',
@@ -14,7 +14,7 @@ AuthRouter.post(
   }),
 );
 
-AuthRouter.get('/successredirect', authController.successredirect);
-AuthRouter.get('/failureredirect', authController.failureredirect);
+router.get('/successredirect', authController.successredirect);
+router.get('/failureredirect', authController.failureredirect);
 
-AuthRouter.post('/signup', authController.signup);
+router.post('/signup', authController.signup);

@@ -5,7 +5,7 @@ import session from 'express-session';
 import MongoStore from 'connect-mongo';
 import passport from 'passport';
 import { connect } from './config/mongo';
-import { AuthRouter } from './routes/auth.route';
+import { router as AuthRouter } from './routes/auth.route';
 import logger from './config/logger';
 
 const app: Application = express();
