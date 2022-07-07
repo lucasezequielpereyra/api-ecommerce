@@ -19,11 +19,18 @@ const userSchema = new Schema<IUser>(
     },
     avatar: {
       type: String,
-      required: true,
     },
+    role: [
+      {
+        ref: 'Role',
+        type: Schema.Types.ObjectId,
+        required: true,
+      },
+    ],
   },
   {
     timestamps: true,
+    versionKey: false,
   },
 );
 

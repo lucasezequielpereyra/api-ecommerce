@@ -1,4 +1,5 @@
 import { ObjectId } from 'mongoose';
+import { IRole } from '../interfaces/role.interface';
 
 export interface IUser {
   _id: ObjectId;
@@ -8,4 +9,5 @@ export interface IUser {
   avatar: string;
   createdAt: Date;
   updatedAt: Date;
+  role: ObjectId[];
 }

@@ -6,16 +6,19 @@ import MongoStore from 'connect-mongo';
 import passport from 'passport';
 import { connect } from './config/mongo';
 import { router as AuthRouter } from './routes/auth.route';
+import { createRoles } from './libs/initialSetup';
 import logger from './config/logger';
 
 const app: Application = express();
 
 /*    CONFIGS    */
 connect();
+createRoles();
 
 /*    MIDDLEWARES    */
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
 app.use(morgan('dev'));
 app.use(cors());
 

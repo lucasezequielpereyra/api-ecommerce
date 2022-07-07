@@ -4,3 +4,15 @@
 2022-07-03   18:34 [31merror[39m: 	GET /favicon.ico
 2022-07-03   21:58 [31merror[39m: 	E11000 duplicate key error collection: project-final.users index: email_1 dup key: { email: "lucas.pereyra5@gmail.com" }
 2022-07-03   21:58 [31merror[39m: 	E11000 duplicate key error collection: project-final.users index: email_1 dup key: { email: "lucas.pereyra5@gmail.com" }
+2022-07-05   22:25 [31merror[39m: 	Cannot read properties of undefined (reading 'ObjectID')
+2022-07-05   22:25 [31merror[39m: 	Cannot read properties of undefined (reading 'ObjectId')
+2022-07-05   22:26 [31merror[39m: 	mongoose.mongo.ObjectId.fromHexString is not a function
+2022-07-05   23:13 [31merror[39m: 	arrRoles.forEach is not a function
+2022-07-05   23:14 [31merror[39m: 	arrRoles.forEach is not a function
+2022-07-05   23:14 [31merror[39m: 	arrRoles.forEach is not a function
+2022-07-05   23:15 [31merror[39m: 	arrRoles.forEach is not a function
+2022-07-05   23:16 [31merror[39m: 	arrRoles.map is not a function
+2022-07-05   23:23 [31merror[39m: 	Cast to ObjectId failed for value "asd, asd" (type string) at path "_id" for model "Role"
+2022-07-05   23:26 [31merror[39m: 	roles.map is not a function
+2022-07-06   20:01 [31merror[39m: 	Cannot read properties of undefined (reading 'split')
+2022-07-07   19:52 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "lucas.pereyra5@gmail.com" }
