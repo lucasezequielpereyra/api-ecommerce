@@ -9,7 +9,7 @@ export class AuthService {
   }
 
   async findUserByEmail(email: string): Promise<IUser | null> {
-    return await UserModel.findOne({ email });
+    return await UserModel.findOne({ email: email });
   }
 
   async findUserById(id: string): Promise<IUser | null> {

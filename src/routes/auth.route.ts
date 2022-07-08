@@ -2,6 +2,7 @@ import { Router } from 'express';
 import passport from 'passport';
 import multer from 'multer';
 import { AuthController } from '../controllers/auth.controller';
+import { verifyEmail } from '../middlewares/verifySignup';
 
 const authController = new AuthController();
 export const router: Router = Router();
@@ -20,4 +21,8 @@ router.post(
 router.get('/successredirect', authController.successredirect);
 router.get('/failureredirect', authController.failureredirect);
 
-router.post('/signup', uploadAvatar.single('file'), authController.signup);
+router.post(
+  '/signup',
+  [uploadAvatar.single('file'), verifyEmail],
+  authController.signup,
+);

@@ -16,3 +16,41 @@
 2022-07-05   23:26 [31merror[39m: 	roles.map is not a function
 2022-07-06   20:01 [31merror[39m: 	Cannot read properties of undefined (reading 'split')
 2022-07-07   19:52 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "lucas.pereyra5@gmail.com" }
+2022-07-07   20:28 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   20:29 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   20:29 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   20:31 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   20:32 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   20:33 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   20:33 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   20:34 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   20:35 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   20:36 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   21:05 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   21:08 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   21:09 [31merror[39m: 	User validation failed: name: Path `name` is required., email: Path `email` is required., password: Path `password` is required.
+2022-07-07   21:13 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   21:14 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   21:15 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   21:15 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   21:16 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   21:18 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   21:22 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   21:26 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   21:26 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   21:28 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   21:37 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   21:39 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   21:39 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   21:40 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   21:43 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-07   21:46 [31merror[39m: 	User validation failed: name: Path `name` is required., email: Path `email` is required., password: Path `password` is required.
+2022-07-07   21:46 [31merror[39m: 	User validation failed: name: Path `name` is required., email: Path `email` is required., password: Path `password` is required.
+2022-07-07   21:46 [31merror[39m: 	User validation failed: name: Path `name` is required., email: Path `email` is required., password: Path `password` is required.
+2022-07-07   21:47 [31merror[39m: 	User validation failed: name: Path `name` is required., email: Path `email` is required., password: Path `password` is required.
+2022-07-07   21:47 [31merror[39m: 	User validation failed: name: Path `name` is required., email: Path `email` is required., password: Path `password` is required.
+2022-07-07   21:48 [31merror[39m: 	User validation failed: name: Path `name` is required., email: Path `email` is required., password: Path `password` is required.
+2022-07-07   21:48 [31merror[39m: 	User validation failed: name: Path `name` is required., email: Path `email` is required., password: Path `password` is required.
+2022-07-07   21:48 [31merror[39m: 	User validation failed: name: Path `name` is required., email: Path `email` is required., password: Path `password` is required.
+2022-07-07   21:52 [31merror[39m: 	User validation failed: name: Path `name` is required., email: Path `email` is required., password: Path `password` is required.
+2022-07-07   21:54 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
