@@ -18,9 +18,15 @@ router.post(
   }),
 );
 
+// Logout with session
+router.get('/signout', (req, res) => {
+  req.session.destroy(() => {
+    res.redirect('/');
+  });
+});
+
 router.get('/successredirect', authController.successredirect);
 router.get('/failureredirect', authController.failureredirect);
-
 router.post(
   '/signup',
   [uploadAvatar.single('file'), verifyEmail],
