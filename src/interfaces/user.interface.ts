@@ -1,5 +1,4 @@
 import { ObjectId } from 'mongoose';
-import { IRole } from '../interfaces/role.interface';
 
 export interface IUser {
   _id: ObjectId;

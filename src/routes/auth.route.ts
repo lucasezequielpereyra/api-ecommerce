@@ -20,9 +20,13 @@ router.post(
 
 // Logout with session
 router.get('/signout', (req, res) => {
-  req.session.destroy(() => {
-    res.redirect('/');
-  });
+  if (req.session) {
+    req.session.destroy(() => {
+      res.status(200).json('session destroyed');
+    });
+  } else {
+    res.status(400).json('session not found');
+  }
 });
 
 router.get('/successredirect', authController.successredirect);
