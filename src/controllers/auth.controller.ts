@@ -48,6 +48,9 @@ export class AuthController {
     if (req.isAuthenticated()) {
       const token: string = authService.getUserToken(req.session.passport.user);
       req.session.passport.token = token;
+      res.status(200).json({
+        token,
+      });
     } else {
       res.status(401).json('unauthorized');
     }

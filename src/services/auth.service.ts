@@ -1,5 +1,8 @@
 import { IUser } from '../interfaces/user.interface';
+import { IRole } from '../interfaces/role.interface';
 import { UserModel } from '../models/user.model';
+import { RoleModel } from '../models/role.model';
+import { ObjectId } from 'mongoose';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
@@ -28,5 +31,23 @@ export class AuthService {
     return jwt.sign({ id: user._id }, String(process.env.JWT_PHRASE), {
       expiresIn: 1000 * 60 * 60 * 24,
     });
+  }
+
+  async findUserRole(id: string, role: ObjectId): Promise<Boolean> {
+    const user = await UserModel.findById(
+      { _id: id },
+      {
+        role: { $elemMatch: { _id: role } },
+      },
+    );
+    if (!user) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  async findRoleByName(name: string): Promise<IRole | null> {
+    return await RoleModel.findOne({ name });
   }
 }

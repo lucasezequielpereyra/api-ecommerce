@@ -7,6 +7,7 @@ import MongoStore from 'connect-mongo';
 import passport from 'passport';
 import { connect } from './config/mongo';
 import { router as AuthRouter } from './routes/auth.route';
+import { router as CategoryRouter } from './routes/category.route';
 import { createRoles } from './libs/initialSetup';
 
 const app: Application = express();
@@ -45,6 +46,7 @@ app.use(passport.session());
 
 /*    ROUTES    */
 app.use('/auth', AuthRouter);
+app.use('/category', CategoryRouter);
 
 /*    ERROR    */
 app.use((req: Request, res: Response, next: NextFunction) => {
