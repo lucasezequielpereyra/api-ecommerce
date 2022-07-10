@@ -54,3 +54,9 @@
 2022-07-07   21:48 [31merror[39m: 	User validation failed: name: Path `name` is required., email: Path `email` is required., password: Path `password` is required.
 2022-07-07   21:52 [31merror[39m: 	User validation failed: name: Path `name` is required., email: Path `email` is required., password: Path `password` is required.
 2022-07-07   21:54 [31merror[39m: 	E11000 duplicate key error collection: final-project.users index: email_1 dup key: { email: "prueba@prueba.com" }
+2022-07-10   18:53 [31merror[39m: 	Parameter "obj" to Document() must be an object, got Tecnology
+2022-07-10   18:55 [31merror[39m: 	E11000 duplicate key error collection: final-project.categories index: name_1 dup key: { name: "Tecnology" }
+2022-07-10   20:51 [31merror[39m: 	jwt malformed
+2022-07-10   20:51 [31merror[39m: 	invalid signature
+2022-07-10   20:52 [31merror[39m: 	invalid signature
+2022-07-10   20:56 [31merror[39m: 	invalid signature
