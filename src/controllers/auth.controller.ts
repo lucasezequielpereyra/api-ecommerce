@@ -17,7 +17,7 @@ export class AuthController {
   async signup(req: Request, res: Response) {
     try {
       const { email, name, password }: any = req.body;
-      const avatar: any = req.file || 'not avatar';
+      const avatar: any = req.file;
 
       const user = new UserModel({
         email,
@@ -28,12 +28,12 @@ export class AuthController {
 
       const userRole = await roleService.findRoleByName('user');
       if (userRole) {
-        user.role = [userRole._id];
+        user.role.push(userRole._id);
       } else {
         logger.error.error('Role "user" not found');
       }
 
-      const newUser = await user.save();
+      const newUser = await authService.newUser(user);
 
       res.status(201).json(newUser);
     } catch (err) {
