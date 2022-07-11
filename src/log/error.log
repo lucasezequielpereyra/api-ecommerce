@@ -62,3 +62,8 @@
 2022-07-10   20:56 [31merror[39m: 	invalid signature
 2022-07-10   21:09 [31merror[39m: 	JWT_SECRET is not defined
 2022-07-10   21:10 [31merror[39m: 	JWT_SECRET is not defined
+2022-07-10   21:47 [31merror[39m: 	Cannot read properties of undefined (reading 'path')
+2022-07-10   22:17 [31merror[39m: 	User validation failed: name: Path `name` is required., email: Path `email` is required., password: Path `password` is required.
+2022-07-10   23:11 [31merror[39m: 	invalid signature
+2022-07-10   23:11 [31merror[39m: 	invalid token
+2022-07-10   23:12 [31merror[39m: 	Cast to ObjectId failed for value "{ _id: undefined }" (type Object) at path "_id" for model "User"

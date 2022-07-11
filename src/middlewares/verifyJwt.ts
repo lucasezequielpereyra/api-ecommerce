@@ -29,7 +29,6 @@ export const verifyToken = async (
       throw new Error('jwt is not defined');
     }
     const decoded: any = jwt.verify(token, secret);
-    console.log(decoded);
     if (decoded) return next();
 
     return res
