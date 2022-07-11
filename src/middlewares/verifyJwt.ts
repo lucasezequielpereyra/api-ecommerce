@@ -21,9 +21,15 @@ export const verifyToken = async (
   if (!token) {
     return res.status(401).json({ auth: false, message: 'No token provided.' });
   }
-  try {
-    const decoded: any = jwt.verify(token, String(process.env.JWT_PHRASE));
 
+  const secret: string | undefined = process.env.JWT_PHRASE;
+
+  try {
+    if (typeof secret === 'undefined') {
+      throw new Error('jwt is not defined');
+    }
+    const decoded: any = jwt.verify(token, secret);
+    console.log(decoded);
     if (decoded) return next();
 
     return res
@@ -31,9 +37,7 @@ export const verifyToken = async (
       .json({ auth: false, message: 'Failed to authenticate token.' });
   } catch (error) {
     logger.error.error(error);
-    return res
-      .status(500)
-      .json({ auth: false, message: 'Failed to authenticate token.' });
+    return res.status(500).json({ auth: false, message: error });
   }
 };
 
