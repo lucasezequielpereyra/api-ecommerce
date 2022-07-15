@@ -1,0 +1,459 @@
+{
+	"info": {
+		"_postman_id": "cb3c564b-72b5-463c-ad7c-73c8dd8a7760",
+		"name": "CoderHouse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11934271"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/lucas/Pictures/Saved Pictures/WhatsApp Image 2022-02-05 at 1.54.06 PM.jpeg"
+								},
+								{
+									"key": "name",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "admin@admin.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "asdasd123",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin@admin.com\",\r\n    \"password\": \"asdasd123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "new",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTc0OTY4MjUsImV4cCI6MTc0Mzg5NjgyNX0.nGUMZXoBtP4zMG8-qJCvrCVZTgYwRDwq3cpIAmAMW90",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sport\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/category/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "new",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTc1MDU2MTEsImV4cCI6MTc0MzkwNTYxMX0.Ny2Qkev2iL5ckBuTxWvyPjhs48yh-lfqwMdVcdQj8qU",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/lucas/Pictures/CODER/mtb.jpeg"
+								},
+								{
+									"key": "name",
+									"value": "MTB sars 29''",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1699",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "this is a mtb",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "62d0a9b9130a18885160d224",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/product/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updated by id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTc1MDU2MTEsImV4cCI6MTc0MzkwNTYxMX0.Ny2Qkev2iL5ckBuTxWvyPjhs48yh-lfqwMdVcdQj8qU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/lucas/Pictures/CODER/mac.jpg"
+								},
+								{
+									"key": "name",
+									"value": "MacBook edited",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "999",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "this is a macbook pro",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "62cb4ad109d8b82efda2a126",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/product/62cb88098a2857261da347b4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"62cb88098a2857261da347b4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTc2NjI0OTIsImV4cCI6MTY2MTI2MjQ5Mn0.-dQjEmqQTPhr-zn-aE_3T-x1gVbEXGTr1TJ0DbRkl9E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/product/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTc1MDU2MTEsImV4cCI6MTc0MzkwNTYxMX0.Ny2Qkev2iL5ckBuTxWvyPjhs48yh-lfqwMdVcdQj8qU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/product/62cb88098a2857261da347b4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"62cb88098a2857261da347b4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find by category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTc0OTY4MjUsImV4cCI6MTc0Mzg5NjgyNX0.nGUMZXoBtP4zMG8-qJCvrCVZTgYwRDwq3cpIAmAMW90",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/product/category/62cb4ad109d8b82efda2a126",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"category",
+								"62cb4ad109d8b82efda2a126"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "new",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTc2NjI0OTIsImV4cCI6MTY2MTI2MjQ5Mn0.-dQjEmqQTPhr-zn-aE_3T-x1gVbEXGTr1TJ0DbRkl9E",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"products\": [{\"id\": \"62cb88098a2857261da347b4\", \"quantity\": 5}, {\"id\": \"62ccc35877d895f67fe62795\", \"quantity\": 3}],\r\n    \"address\": \"calle siempre viva 123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/cart/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cart",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\": {\"id\": \"62d0aa07130a18885160d22d\", \"quantity\": 1}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/cart/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cart",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cart/delete/62d0aa07130a18885160d22d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cart",
+								"delete",
+								"62d0aa07130a18885160d22d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": []
+		}
+	]
+}
