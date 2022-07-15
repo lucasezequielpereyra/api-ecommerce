@@ -28,6 +28,7 @@ const orderSchema = new Schema<IOrder>(
     state: {
       type: String,
       required: true,
+      default: 'Generated',
     },
     email: {
       type: String,

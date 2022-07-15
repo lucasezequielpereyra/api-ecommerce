@@ -13,3 +13,8 @@ router.put(
   [verifyToken, verifyUserRole],
   cartController.deleteProduct,
 );
+router.post(
+  '/checkout',
+  [verifyToken, verifyUserRole],
+  cartController.checkout,
+);

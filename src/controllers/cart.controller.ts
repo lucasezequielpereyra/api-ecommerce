@@ -203,4 +203,27 @@ export class CartController {
       res.status(500).json({ message: 'Internal server error', error });
     }
   }
+
+  async checkout(req: Request, res: Response) {
+    const user = req.session?.passport.user;
+    try {
+      if (!user) {
+        return res.status(400).json({
+          message: 'Bad request',
+        });
+      }
+
+      // Get cart from database
+      const cart = await cartService.getCartByUser(user);
+      if (!cart) {
+        return res.status(400).json({
+          message: 'User has no cart',
+        });
+      }
+
+      res.redirect(307, `/order/new`);
+    } catch (error) {
+      res.status(500).json({ message: 'Internal server error', error });
+    }
+  }
 }

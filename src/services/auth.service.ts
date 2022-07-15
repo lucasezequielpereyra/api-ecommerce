@@ -50,4 +50,13 @@ export class AuthService {
   async findRoleByName(name: string): Promise<IRole | null> {
     return await RoleModel.findOne({ name });
   }
+
+  async getUserEmail(id: ObjectId): Promise<string | null> {
+    const user = await UserModel.findById(id);
+    if (!user) {
+      return null;
+    } else {
+      return user.email;
+    }
+  }
 }

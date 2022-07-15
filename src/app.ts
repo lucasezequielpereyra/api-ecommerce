@@ -10,6 +10,7 @@ import { router as AuthRouter } from './routes/auth.route';
 import { router as CategoryRouter } from './routes/category.route';
 import { router as ProductRouter } from './routes/product.route';
 import { router as CartRouter } from './routes/cart.route';
+import { router as OrderRouter } from './routes/order.route';
 import { createRoles } from './libs/initialSetup';
 
 const app: Application = express();
@@ -51,6 +52,7 @@ app.use('/auth', AuthRouter);
 app.use('/category', CategoryRouter);
 app.use('/product', ProductRouter);
 app.use('/cart', CartRouter);
+app.use('/order', OrderRouter);
 
 /*    ERROR    */
 app.use((req: Request, res: Response, next: NextFunction) => {

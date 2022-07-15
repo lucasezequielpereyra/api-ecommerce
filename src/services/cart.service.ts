@@ -83,4 +83,12 @@ export class CartService {
       return null;
     }
   }
+
+  async deleteByUser(user: ObjectId): Promise<ICart | null> {
+    try {
+      return await CartModel.findOneAndDelete({ user });
+    } catch (error) {
+      return null;
+    }
+  }
 }
