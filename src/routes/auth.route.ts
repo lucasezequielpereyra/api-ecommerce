@@ -30,7 +30,9 @@ router.get('/signout', (req, res) => {
 });
 
 router.get('/successredirect', authController.successredirect);
+
 router.get('/failureredirect', authController.failureredirect);
+
 router.post(
   '/signup',
   [uploadAvatar.single('file'), verifyEmail],

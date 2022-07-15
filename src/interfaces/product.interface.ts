@@ -7,4 +7,6 @@ export interface IProduct {
   description: string;
   image: string;
   category: ObjectId;
+  createdAt: Date;
+  updatedAt: Date;
 }

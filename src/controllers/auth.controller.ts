@@ -57,6 +57,6 @@ export class AuthController {
   }
 
   async failureredirect(req: Request, res: Response) {
-    res.status(200).json('failure');
+    res.status(401).json('unauthorized');
   }
 }

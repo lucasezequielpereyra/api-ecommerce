@@ -67,3 +67,9 @@
 2022-07-10   23:11 [31merror[39m: 	invalid signature
 2022-07-10   23:11 [31merror[39m: 	invalid token
 2022-07-10   23:12 [31merror[39m: 	Cast to ObjectId failed for value "{ _id: undefined }" (type Object) at path "_id" for model "User"
+2022-07-12   18:45 [31merror[39m: 	jwt expired
+2022-07-12   18:45 [31merror[39m: 	jwt expired
+2022-07-12   18:45 [31merror[39m: 	jwt expired
+2022-07-12   18:46 [31merror[39m: 	jwt expired
+2022-07-12   18:46 [31merror[39m: 	jwt expired
+2022-07-14   20:17 [31merror[39m: 	Cannot read properties of undefined (reading 'user')

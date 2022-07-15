@@ -15,13 +15,17 @@ router.post(
   productController.newProduct,
 );
 router.get('/', verifyToken, productController.getProducts);
+
 router.get('/:id', verifyToken, productController.getProduct);
+
 router.put(
   '/:id',
   [uploadImage.single('file'), verifyToken, verifyAdminRole],
   productController.updateProduct,
 );
+
 router.delete('/:id', verifyToken, productController.deleteProduct);
+
 router.get(
   '/category/:category',
   verifyToken,

@@ -29,7 +29,7 @@ export class AuthService {
 
   getUserToken(user: IUser): string {
     return jwt.sign({ id: user._id }, String(process.env.JWT_PHRASE), {
-      expiresIn: 1000 * 60 * 60 * 24,
+      expiresIn: 3600000,
     });
   }
 

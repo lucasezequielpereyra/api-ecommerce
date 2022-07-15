@@ -11,6 +11,7 @@ router.post(
   [verifyToken, verifyAdminRole],
   categoryController.newCategory,
 );
+
 router.get(
   '/',
   [verifyToken, verifyAdminRole],

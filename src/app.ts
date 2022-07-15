@@ -9,6 +9,7 @@ import { connect } from './config/mongo';
 import { router as AuthRouter } from './routes/auth.route';
 import { router as CategoryRouter } from './routes/category.route';
 import { router as ProductRouter } from './routes/product.route';
+import { router as CartRouter } from './routes/cart.route';
 import { createRoles } from './libs/initialSetup';
 
 const app: Application = express();
@@ -35,7 +36,7 @@ app.use(
     saveUninitialized: false,
     rolling: true,
     cookie: {
-      maxAge: 1000 * 60 * 60 * 24,
+      maxAge: 3600000,
     },
   }),
 );
@@ -49,6 +50,7 @@ app.use(passport.session());
 app.use('/auth', AuthRouter);
 app.use('/category', CategoryRouter);
 app.use('/product', ProductRouter);
+app.use('/cart', CartRouter);
 
 /*    ERROR    */
 app.use((req: Request, res: Response, next: NextFunction) => {

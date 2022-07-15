@@ -57,4 +57,8 @@ export class ProductService {
   async getProductByCategory(category: string): Promise<IProduct[]> {
     return await ProductModel.find({ category });
   }
+
+  async getMultipleProducts(ids: ObjectId[]): Promise<IProduct[]> {
+    return await ProductModel.find({ _id: { $in: ids } });
+  }
 }
