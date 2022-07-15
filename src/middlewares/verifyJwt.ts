@@ -17,7 +17,12 @@ export const verifyToken = async (
   res: Response,
   next: NextFunction,
 ) => {
-  const token: any = req.headers['x-access-token'];
+  if (!req.isAuthenticated()) {
+    return res.status(401).json({
+      message: 'Unauthorized',
+    });
+  }
+  const token: any = req.session?.passport.token;
   if (!token) {
     return res.status(401).json({ auth: false, message: 'No token provided.' });
   }
@@ -49,7 +54,7 @@ export const verifyAdminRole = async (
     const userId = req.session?.passport.user;
     const role: IRole | null = await authService.findRoleByName('admin');
     if (!role) {
-      throw new Error('Role not found');
+      return res.status(502).json({ auth: false, message: 'Role not found.' });
     }
 
     const userRole: Boolean | null = await authService.findUserRole(
@@ -61,6 +66,36 @@ export const verifyAdminRole = async (
       return res
         .status(401)
         .json({ auth: false, message: 'User is not admin' });
+    }
+
+    return next();
+  } catch (error) {
+    logger.error.error(error);
+    res.status(500).json({
+      message: error,
+    });
+  }
+};
+
+export const verifyUserRole = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  try {
+    const userId = req.session?.passport.user;
+    const role: IRole | null = await authService.findRoleByName('user');
+    if (!role) {
+      return res.status(502).json({ auth: false, message: 'Role not found.' });
+    }
+
+    const userRole: Boolean | null = await authService.findUserRole(
+      userId,
+      role._id,
+    );
+
+    if (!userRole) {
+      return res.status(401).json({ auth: false, message: 'User is not user' });
     }
 
     return next();
