@@ -448,6 +448,27 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "done",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cart/checkout/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cart",
+								"checkout",
+								""
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
