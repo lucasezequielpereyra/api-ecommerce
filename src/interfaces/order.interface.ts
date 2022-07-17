@@ -8,4 +8,5 @@ export interface IOrder {
   updatedAt: Date;
   state: string;
   email: string;
+  user: ObjectId;
 }

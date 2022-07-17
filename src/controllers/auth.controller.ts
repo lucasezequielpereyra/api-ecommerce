@@ -49,7 +49,7 @@ export class AuthController {
       const token: string = authService.getUserToken(req.session.passport.user);
       req.session.passport.token = token;
       res.status(200).json({
-        token,
+        message: 'authorized',
       });
     } else {
       res.status(401).json('unauthorized');
