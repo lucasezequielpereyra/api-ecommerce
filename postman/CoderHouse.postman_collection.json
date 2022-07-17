@@ -94,6 +94,26 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "signout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/auth/signout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signout"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -474,7 +494,48 @@
 		},
 		{
 			"name": "Order",
-			"item": []
+			"item": [
+				{
+					"name": "checkout",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/order/check",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"order",
+								"check"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/order/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"order",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
