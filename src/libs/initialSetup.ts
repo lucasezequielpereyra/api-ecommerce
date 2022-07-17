@@ -45,7 +45,10 @@ export const createDefaultUsers = async () => {
       name: 'admin',
       email: 'admin@admin.com',
       password: 'admin',
-      role: [new mongoose.Types.ObjectId('62c4e4137c2de4d4675be0af')],
+      role: [
+        new mongoose.Types.ObjectId('62c4e4137c2de4d4675be0af'),
+        new mongoose.Types.ObjectId('62c4e41bac7d3182e9815b5b'),
+      ],
     });
 
     user.save();
