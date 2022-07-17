@@ -40,7 +40,11 @@ export class ProductService {
 
   async getProduct(id: string): Promise<IProduct | null> {
     try {
-      return await ProductModel.findById(id);
+      const product = await ProductModel.findOne({ _id: id });
+      if (!product) {
+        return null;
+      }
+      return product;
     } catch (error) {
       return null;
     }
@@ -61,4 +65,7 @@ export class ProductService {
   async getMultipleProducts(ids: ObjectId[]): Promise<IProduct[]> {
     return await ProductModel.find({ _id: { $in: ids } });
   }
+}
+function _id(_id: any, id: string) {
+  throw new Error('Function not implemented.');
 }

@@ -9,11 +9,11 @@ export class CategoryController {
     try {
       const { name }: any = req.body;
       const category = await categoryService.newCategory(name);
-      res.status(201).json(category);
-    } catch (err) {
+      return res.status(201).json(category);
+    } catch (err: any) {
       logger.error.error(err);
-      res.status(500).json({
-        message: err,
+      return res.status(500).json({
+        message: err.message,
       });
     }
   }
@@ -21,11 +21,11 @@ export class CategoryController {
   async listCategories(req: Request, res: Response) {
     try {
       const categories = await categoryService.listCategories();
-      res.status(200).json(categories);
-    } catch (err) {
+      return res.status(200).json(categories);
+    } catch (err: any) {
       logger.error.error(err);
-      res.status(500).json({
-        message: err,
+      return res.status(500).json({
+        message: err.message,
       });
     }
   }

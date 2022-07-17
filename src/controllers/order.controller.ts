@@ -50,9 +50,9 @@ export class OrderController {
         message: 'Order created',
         order: saveOrder,
       });
-    } catch (error) {
+    } catch (err: any) {
       return res.status(400).json({
-        message: 'Bad request',
+        message: err.message,
       });
     }
   }
@@ -87,9 +87,9 @@ export class OrderController {
         message: 'Orders found',
         orderDone,
       });
-    } catch (error) {
+    } catch (err: any) {
       return res.status(400).json({
-        message: 'Bad request',
+        message: err.message,
       });
     }
   }
@@ -106,9 +106,9 @@ export class OrderController {
         message: 'Orders found',
         orders,
       });
-    } catch (error) {
+    } catch (err: any) {
       return res.status(400).json({
-        message: 'Bad request',
+        message: err.message,
       });
     }
   }

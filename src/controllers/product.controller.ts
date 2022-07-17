@@ -19,9 +19,9 @@ export class ProductController {
       });
       const product = await productService.newProduct(newProduct);
 
-      res.status(201).json(product);
-    } catch (error) {
-      res.status(500).json({ error });
+      return res.status(201).json(product);
+    } catch (error: any) {
+      return res.status(500).json({ message: error.message });
     }
   }
 
@@ -32,7 +32,7 @@ export class ProductController {
     try {
       const findProduct: IProduct | null = await productService.getProduct(id);
       if (!findProduct) {
-        res.status(404).json({ error: 'Product not found' });
+        return res.status(404).json({ error: 'Product not found' });
       } else {
         const newProduct = new ProductModel({
           name: name || findProduct.name,
@@ -47,19 +47,19 @@ export class ProductController {
           newProduct,
         );
 
-        res.status(200).json(updatedProduct);
+        return res.status(200).json(updatedProduct);
       }
-    } catch (error) {
-      res.status(500).json({ error });
+    } catch (err: any) {
+      return res.status(500).json({ message: err.message });
     }
   }
 
   async getProducts(req: Request, res: Response) {
     try {
       const products = await productService.getProducts();
-      res.status(200).json(products);
-    } catch (error) {
-      res.status(500).json({ error });
+      return res.status(200).json(products);
+    } catch (err: any) {
+      return res.status(500).json({ message: err.message });
     }
   }
 
@@ -67,10 +67,10 @@ export class ProductController {
     const { id } = req.params;
     try {
       const product = await productService.getProduct(id);
-      if (!product) {
-        res.status(404).json({ error: 'Product not found' });
+      if (product === null) {
+        return res.status(404).json({ error: 'Product not found' });
       }
-      res.status(200).json(product);
+      return res.status(200).json(product);
     } catch (error) {
       res.status(500).json({ error });
     }
@@ -81,11 +81,11 @@ export class ProductController {
     try {
       const product = await productService.deleteProduct(id);
       if (!product) {
-        res.status(404).json({ error: 'Product not found' });
+        return res.status(404).json({ error: 'Product not found' });
       }
-      res.status(200).json(product);
-    } catch (error) {
-      res.status(500).json({ error });
+      return res.status(200).json(product);
+    } catch (err: any) {
+      res.status(500).json({ message: err.message });
     }
   }
 
@@ -94,8 +94,8 @@ export class ProductController {
     try {
       const products = await productService.getProductByCategory(category);
       res.status(200).json(products);
-    } catch (error) {
-      res.status(500).json({ error });
+    } catch (err: any) {
+      res.status(500).json({ message: err.message });
     }
   }
 }

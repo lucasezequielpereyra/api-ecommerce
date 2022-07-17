@@ -35,11 +35,11 @@ export class AuthController {
 
       const newUser = await authService.newUser(user);
 
-      res.status(201).json(newUser);
-    } catch (err) {
+      return res.status(201).json(newUser);
+    } catch (err: any) {
       logger.error.error(err);
-      res.status(500).json({
-        message: err,
+      return res.status(500).json({
+        message: err.message,
       });
     }
   }

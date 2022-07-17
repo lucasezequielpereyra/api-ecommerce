@@ -79,8 +79,8 @@ export class CartController {
         message: 'Cart created',
         cart: saveCart,
       });
-    } catch (error) {
-      res.status(500).json({ message: 'Internal server error', error });
+    } catch (err: any) {
+      return res.status(500).json({ message: err.message });
     }
   }
 
@@ -154,8 +154,8 @@ export class CartController {
       return res.status(400).json({
         message: 'Product already in cart',
       });
-    } catch (error) {
-      res.status(500).json({ message: 'Internal server error', error });
+    } catch (err: any) {
+      res.status(500).json({ message: err.message });
     }
   }
 
@@ -199,8 +199,8 @@ export class CartController {
         message: 'Cart updated',
         cart: cartUpdated,
       });
-    } catch (error) {
-      res.status(500).json({ message: 'Internal server error', error });
+    } catch (err: any) {
+      return res.status(500).json({ message: err.message });
     }
   }
 
@@ -221,9 +221,9 @@ export class CartController {
         });
       }
 
-      res.redirect(307, `/order/new`);
-    } catch (error) {
-      res.status(500).json({ message: 'Internal server error', error });
+      return res.redirect(307, `/order/new`);
+    } catch (err: any) {
+      return res.status(500).json({ message: err.message });
     }
   }
 }
