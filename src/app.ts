@@ -11,13 +11,14 @@ import { router as CategoryRouter } from './routes/category.route';
 import { router as ProductRouter } from './routes/product.route';
 import { router as CartRouter } from './routes/cart.route';
 import { router as OrderRouter } from './routes/order.route';
-import { createRoles } from './libs/initialSetup';
+import { createRoles, createDefaultUsers } from './libs/initialSetup';
 
 const app: Application = express();
 
 /*    CONFIGS    */
 connect();
 createRoles();
+createDefaultUsers();
 
 /*    MIDDLEWARES    */
 app.use(bodyParser.json());
