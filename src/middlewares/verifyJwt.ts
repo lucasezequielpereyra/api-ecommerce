@@ -51,21 +51,21 @@ export const verifyAdminRole = async (
   next: NextFunction,
 ) => {
   try {
-    const userId = req.session?.passport.user;
+    const user = req.session?.passport.user;
     const role: IRole | null = await authService.findRoleByName('admin');
     if (!role) {
       return res.status(502).json({ auth: false, message: 'Role not found.' });
     }
 
-    const userRole: Boolean | null = await authService.findUserRole(
-      userId,
-      role._id,
-    );
-
-    if (!userRole) {
+    const userRoles = await authService.getUserRoles(user);
+    if (!userRoles) {
       return res
-        .status(401)
-        .json({ auth: false, message: 'User is not admin' });
+        .status(502)
+        .json({ auth: false, message: 'User not has roles.' });
+    }
+
+    if (!userRoles.includes(role._id)) {
+      return res.status(401).json({ auth: false, message: 'Unauthorized' });
     }
 
     return next();
@@ -83,19 +83,21 @@ export const verifyUserRole = async (
   next: NextFunction,
 ) => {
   try {
-    const userId = req.session?.passport.user;
+    const user = req.session?.passport.user;
     const role: IRole | null = await authService.findRoleByName('user');
     if (!role) {
       return res.status(502).json({ auth: false, message: 'Role not found.' });
     }
 
-    const userRole: Boolean | null = await authService.findUserRole(
-      userId,
-      role._id,
-    );
+    const userRoles = await authService.getUserRoles(user);
+    if (!userRoles) {
+      return res
+        .status(502)
+        .json({ auth: false, message: 'User not has roles.' });
+    }
 
-    if (!userRole) {
-      return res.status(401).json({ auth: false, message: 'User is not user' });
+    if (!userRoles.includes(role._id)) {
+      return res.status(401).json({ auth: false, message: 'Unauthorized' });
     }
 
     return next();

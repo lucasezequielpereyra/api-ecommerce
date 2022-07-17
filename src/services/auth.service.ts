@@ -33,20 +33,6 @@ export class AuthService {
     });
   }
 
-  async findUserRole(id: string, role: ObjectId): Promise<Boolean> {
-    const user = await UserModel.findById(
-      { _id: id },
-      {
-        role: { $elemMatch: { _id: role } },
-      },
-    );
-    if (!user) {
-      return false;
-    } else {
-      return true;
-    }
-  }
-
   async findRoleByName(name: string): Promise<IRole | null> {
     return await RoleModel.findOne({ name });
   }
@@ -57,6 +43,15 @@ export class AuthService {
       return null;
     } else {
       return user.email;
+    }
+  }
+
+  async getUserRoles(id: ObjectId): Promise<ObjectId[] | null> {
+    const user = await UserModel.findById(id);
+    if (!user) {
+      return null;
+    } else {
+      return user.role;
     }
   }
 }

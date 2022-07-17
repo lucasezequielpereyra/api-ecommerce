@@ -73,3 +73,4 @@
 2022-07-12   18:46 [31merror[39m: 	jwt expired
 2022-07-12   18:46 [31merror[39m: 	jwt expired
 2022-07-14   20:17 [31merror[39m: 	Cannot read properties of undefined (reading 'user')
+2022-07-16   22:39 [31merror[39m: 	E11000 duplicate key error collection: final-project.categories index: name_1 dup key: { name: "Sport" }
