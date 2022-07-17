@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 import session from 'express-session';
 import MongoStore from 'connect-mongo';
 import passport from 'passport';
+import path from 'path';
 import { connect } from './config/mongo';
 import { router as AuthRouter } from './routes/auth.route';
 import { router as CategoryRouter } from './routes/category.route';
@@ -27,6 +28,11 @@ app.use(express.static('public'));
 app.use(morgan('dev'));
 app.use(cors());
 
+/*    TEMPLATE ENGINE     */
+const viewPath = path.join(__dirname, '../views');
+app.set('view engine', 'ejs');
+app.set('views', viewPath);
+
 /*   SESSION    */
 app.use(
   session({
@@ -47,6 +53,11 @@ app.use(
 import './config/passport';
 app.use(passport.initialize());
 app.use(passport.session());
+
+/*    STATIC ROUTES    */
+app.use('/messages', (req: Request, res: Response, next: NextFunction) => {
+  res.render('messages');
+});
 
 /*    ROUTES    */
 app.use('/auth', AuthRouter);
