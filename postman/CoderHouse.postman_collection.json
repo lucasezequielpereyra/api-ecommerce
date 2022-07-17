@@ -73,7 +73,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"admin@admin.com\",\r\n    \"password\": \"asdasd123\"\r\n}",
+							"raw": "{\r\n    \"username\": \"admin@admin\",\r\n    \"password\": \"uadmin\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
