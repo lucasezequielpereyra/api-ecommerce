@@ -20,16 +20,16 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/C:/Users/lucas/Pictures/Saved Pictures/WhatsApp Image 2022-02-05 at 1.54.06 PM.jpeg"
+									"src": "/C:/Users/lucas/Pictures/Saved Pictures/thumb-1920-954241.jpg"
 								},
 								{
 									"key": "name",
-									"value": "admin",
+									"value": "user",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "admin@admin.com",
+									"value": "user@user.com",
 									"type": "text"
 								},
 								{
@@ -73,7 +73,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"admin@admin\",\r\n    \"password\": \"uadmin\"\r\n}",
+							"raw": "{\r\n    \"username\": \"admin@admin.com\",\r\n    \"password\": \"admin\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -164,7 +164,8 @@
 							{
 								"key": "x-access-token",
 								"value": "",
-								"type": "text"
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"url": {
@@ -359,7 +360,8 @@
 							{
 								"key": "x-access-token",
 								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTc0OTY4MjUsImV4cCI6MTc0Mzg5NjgyNX0.nGUMZXoBtP4zMG8-qJCvrCVZTgYwRDwq3cpIAmAMW90",
-								"type": "text"
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"url": {
@@ -373,6 +375,26 @@
 								"product",
 								"category",
 								"62cb4ad109d8b82efda2a126"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/product/62cb88098a2857261da347b4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"62cb88098a2857261da347b4"
 							]
 						}
 					},
@@ -530,6 +552,31 @@
 							"path": [
 								"order",
 								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chat",
+			"item": [
+				{
+					"name": "get by user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/chat/messages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"chat",
+								"messages"
 							]
 						}
 					},

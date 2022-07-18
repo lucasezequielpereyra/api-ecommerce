@@ -14,10 +14,7 @@ const authService = new AuthService();
 const messageService = new MessageService();
 
 export class MessagesController {
-  async getMessages(
-    req: Request,
-    res: Response,
-  ): Promise<void | Response<any, Record<string, any>>> {
+  async getMessages(req: Request, res: Response): Promise<Response | void> {
     const user = req.session?.passport.user;
     try {
       const dataUser: IUser | null = await authService.findUserById(user);
@@ -37,6 +34,27 @@ export class MessagesController {
       }
 
       return res.render('messages', { user: dataUser, admin: false });
+    } catch (err: any) {
+      logger.error.error({ message: err.message });
+    }
+  }
+  async getMessagesByUser(
+    req: Request,
+    res: Response,
+  ): Promise<Response | void> {
+    const user = req.session?.passport.user;
+    try {
+      const dataUser: IUser | null = await authService.findUserById(user);
+      if (dataUser === null) {
+        return res.status(401).json('User not found');
+      }
+
+      const messages = await messageService.getMessagesByUser(user);
+      if (messages === null) {
+        return res.status(401).json('User not found');
+      }
+
+      return res.json(messages);
     } catch (err: any) {
       logger.error.error({ message: err.message });
     }
