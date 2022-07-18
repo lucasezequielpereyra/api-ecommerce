@@ -13,9 +13,18 @@ const messagesSchema = new Schema<IMessages>(
       type: String,
       required: true,
     },
-    user: {
+    typeUser: {
       type: String,
       required: true,
+    },
+    user: {
+      ref: 'User',
+      type: Schema.Types.ObjectId,
+      required: true,
+    },
+    responseTo: {
+      type: String,
+      default: null,
     },
   },
   {

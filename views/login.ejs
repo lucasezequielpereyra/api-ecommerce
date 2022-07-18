@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include("template/head") %>
+  <title>Login - Messages</title>
+  <body>
+    <div class="header">
+      <img src="http://via.placeholder.com/200x100" alt="Logo" class="logo">
+    </div>
+    <form action="/auth/signin" method="post" class='form-container'>    
+      <div class="container">
+        <label for="username"><b>Email</b></label>
+        <input type="text" placeholder="Ingrese su usuario" name="username" required>
+    
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+            
+        <button class="btn-login" type="submit">Ingresar</button>
+      </div>
+    </form>
+  </body>
+</html>

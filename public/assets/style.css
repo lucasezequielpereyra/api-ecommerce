@@ -1,0 +1,123 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  background-color: #002385;
+  justify-content: center;
+  padding: 0.5%;
+  margin-bottom: 2%;
+}
+
+img.logo {
+  width: 17%;
+}
+
+/*  Style index page   */
+
+.form-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-message{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2%;
+  padding: 2%;
+  border: 1px solid #002385;
+}
+
+.container-message span {
+  font-weight: bold;
+  color: #002385;
+}
+
+.alert-danger{
+  color: red;
+  margin-bottom: 1%;
+}
+
+input[type=text], input[type=file], input[type=number], input[type=password] {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 1px 0 3% 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.btn-login {
+  background-color: #003ad8;
+  color: white;
+  padding: 1%;
+  border: none;
+  cursor: pointer;
+  width: 25%;
+}
+
+.btn-login:hover {
+  opacity: 0.8;
+}
+
+.container-bottom{
+  margin-top: 2%;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+span.psw {
+  padding: 1.5%;
+  margin-right: 5%;
+}
+
+span.psw a {
+  color: #003ad8;
+  text-decoration: none;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 720px) {
+  img.logo {
+    width: 50%;
+  }
+
+  .container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-login{
+    width: 50%;
+    padding: 3%;
+  }
+
+  .container-bottom{
+    width: 50%;
+  }
+
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}

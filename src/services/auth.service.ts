@@ -13,11 +13,11 @@ export class AuthService {
   }
 
   async findUserByEmail(email: string): Promise<IUser | null> {
-    return await UserModel.findOne({ email: email });
+    return await UserModel.findOne({ email: email }).populate('role');
   }
 
   async findUserById(id: string): Promise<IUser | null> {
-    return await UserModel.findById(id);
+    return await UserModel.findById(id).populate('role');
   }
 
   async comparePassword(

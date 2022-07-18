@@ -23,8 +23,8 @@ export const createRoles = async () => {
 
     logger.info.info('Creating roles');
     return await RoleModel.create(roles);
-  } catch (error) {
-    logger.error.error(error);
+  } catch (err: any) {
+    logger.error.error(err.message);
   }
 };
 
@@ -57,7 +57,7 @@ export const createDefaultUsers = async () => {
     logger.info.info('------- Creating default users -------');
     logger.info.info(user);
     logger.info.info(admin);
-  } catch (error) {
-    logger.error.error(error);
+  } catch (err: any) {
+    logger.error.error(err.message);
   }
 };

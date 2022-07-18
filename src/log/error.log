@@ -82,3 +82,10 @@
 2022-07-17   12:35 [31merror[39m: 	Category validation failed: name: Path `name` is required.
 2022-07-17   12:36 [31merror[39m: 	Category validation failed: name: Path `name` is required.
 2022-07-17   12:36 [31merror[39m: 	Category validation failed: name: Path `name` is required.
+2022-07-17   18:56 [31merror[39m: 	User not found
+2022-07-17   18:56 [31merror[39m: 	User not found
+2022-07-17   22:06 [31merror[39m: 	Messages validation failed: message: Path `message` is required.
+2022-07-17   22:06 [31merror[39m: 	Messages validation failed: message: Path `message` is required.
+2022-07-17   22:36 [31merror[39m: 	Messages validation failed: message: Path `message` is required.
+2022-07-17   22:36 [31merror[39m: 	Messages validation failed: message: Path `message` is required.
+2022-07-17   23:14 [31merror[39m: 	Messages validation failed: message: Path `message` is required.
